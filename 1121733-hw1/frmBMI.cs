@@ -25,7 +25,7 @@ namespace _1121733_hw1
 
                 lblResult.Text = $"{bmi:F2}";
                 string[] strResultList = { "體重過輕", "健康體位", "體位過重", "輕度肥胖", "中度肥胖", "重度肥胖" };
-                Color[] colorList = { Color.Blue, Color.Green, Color.Orange, Color.DarkOrange, Color.Red, Color.Purple };
+                Color[] colorList = { Color.LightBlue, Color.Green, Color.Orange, Color.DarkOrange, Color.Red, Color.Purple };
                 string strResult = "";
                 Color colorResult = Color.Black;
                 int resultIndex = 0;
