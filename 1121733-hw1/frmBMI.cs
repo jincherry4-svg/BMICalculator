@@ -17,6 +17,39 @@ namespace _1121733_hw1
             bool isHeightValid = double.TryParse(txtHeight.Text, out double height);
             bool isWeightValid = double.TryParse(txtWeight.Text, out double weight);
 
+
+            // 驗證身高輸入
+            if (isHeightValid)
+            {
+                if (height <= 0)
+                {
+                    MessageBox.Show("身高必須大於零。", "身高值錯誤",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("請輸入有效的身高數值。", "身高值錯誤",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // 驗證體重輸入
+            if (isWeightValid)
+            {
+                if (weight <= 0)
+                {
+                    MessageBox.Show("體重必須大於零。", "體重值錯誤",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("請輸入有效的體重數值。", "體重值錯誤",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (isHeightValid && isWeightValid)
             {
                 height /= 100;
@@ -24,7 +57,7 @@ namespace _1121733_hw1
                 double bmi = weight / (height * height);
 
                 lblResult.Text = $"{bmi:F2}";
-                string[] strResultList = { "�魫�L��", "���d���", "���L��", "���תέD", "���תέD", "���תέD" };
+                string[] strResultList = { "體重過輕", "健康體位", "體位過重", "輕度肥胖", "中度肥胖", "重度肥胖" };
                 Color[] colorList = { Color.LightBlue, Color.Green, Color.Orange, Color.DarkOrange, Color.Red, Color.Purple };
                 string strResult = "";
                 Color colorResult = Color.Black;
@@ -62,7 +95,7 @@ namespace _1121733_hw1
             }
             else
             {
-                MessageBox.Show("�п�J���Ī��Ʀr�C", "��J���~", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("請輸入有效的數字。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
